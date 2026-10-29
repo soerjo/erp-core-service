@@ -12,6 +12,7 @@ import { MetricsService } from './modules/metrics/metrics.service.js';
 import { AccountingModule } from './modules/accounting/accounting.module.js';
 import { ProcurementModule } from './modules/procurement/procurement.module.js';
 import { SalesModule } from './modules/sales/sales.module.js';
+import { IntegrationModule } from './modules/integration/integration.module.js';
 import { JwtAuthGuard } from './common/guards/jwt-auth.guard.js';
 import { RolesGuard } from './common/guards/roles.guard.js';
 import { PermissionsGuard } from './common/guards/permissions.guard.js';
@@ -42,6 +43,7 @@ import { JwtStrategy } from './common/strategies/jwt.strategy.js';
     AccountingModule,
     ProcurementModule,
     SalesModule,
+    IntegrationModule,
   ],
   providers: [
     UmsJwksService,
