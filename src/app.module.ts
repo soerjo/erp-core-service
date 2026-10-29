@@ -9,6 +9,7 @@ import { PrismaModule } from './prisma/prisma.module.js';
 import { HealthModule } from './modules/health/health.module.js';
 import { MetricsModule } from './modules/metrics/metrics.module.js';
 import { MetricsService } from './modules/metrics/metrics.service.js';
+import { AccountingModule } from './modules/accounting/accounting.module.js';
 import { JwtAuthGuard } from './common/guards/jwt-auth.guard.js';
 import { RolesGuard } from './common/guards/roles.guard.js';
 import { PermissionsGuard } from './common/guards/permissions.guard.js';
@@ -36,6 +37,7 @@ import { JwtStrategy } from './common/strategies/jwt.strategy.js';
     PrismaModule,
     HealthModule,
     MetricsModule,
+    AccountingModule,
   ],
   providers: [
     UmsJwksService,
