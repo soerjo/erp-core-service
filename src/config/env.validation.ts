@@ -2,6 +2,7 @@ import { plainToInstance } from 'class-transformer';
 import {
   IsEnum,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsPort,
   IsString,
@@ -20,40 +21,27 @@ class EnvironmentVariables {
 
   @IsPort()
   @IsOptional()
-  PORT: string = '3000';
+  PORT: string = '3504';
 
   @IsString()
   @IsNotEmpty()
   DATABASE_URL!: string;
 
   @IsString()
-  @IsNotEmpty()
-  JWT_ACCESS_SECRET!: string;
+  @IsOptional()
+  UMS_JWKS_URL?: string;
 
-  @IsString()
-  @IsNotEmpty()
-  JWT_REFRESH_SECRET!: string;
+  @IsNumber()
+  @IsOptional()
+  UMS_JWKS_CACHE_TTL_SECONDS?: number = 3600;
 
   @IsString()
   @IsOptional()
-  JWT_ACCESS_EXPIRATION: string = '15m';
+  UMS_JWT_PUBLIC_KEY?: string;
 
   @IsString()
   @IsOptional()
-  JWT_REFRESH_EXPIRATION: string = '7d';
-
-  @IsString()
-  @IsNotEmpty()
-  GOOGLE_CLIENT_ID!: string;
-
-  @IsString()
-  @IsNotEmpty()
-  GOOGLE_CLIENT_SECRET!: string;
-
-  @IsString()
-  @IsOptional()
-  GOOGLE_CALLBACK_URL: string =
-    'http://localhost:3000/api/auth/google/callback';
+  UMS_JWT_PUBLIC_KEY_PATH?: string;
 
   @IsString()
   @IsOptional()
